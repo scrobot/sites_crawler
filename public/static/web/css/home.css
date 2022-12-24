@@ -1,0 +1,21 @@
+@media (max-width: 520px) {
+    input[type="url"].form-control {
+        min-width: 250px;
+    }
+}
+
+@media (min-width: 420px) {
+    input[type="url"].form-control {
+        min-width: 400px;
+        width: 75% !important;
+    }
+}
+
+
+.input-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}

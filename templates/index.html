@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% block extends_stylesheets %}
+    {% load static %}
+    <link href="{% static 'css/home.css' %}" rel="stylesheet"/>
+{% endblock %}
+
 {% block content %}
-<p>hello!</p>
+    <form class="input-form">
+        <input type="url" class="form-control" placeholder="Insert the url" aria-label="URL">
+        <input class="button-primary" type="submit" value="GO">
+    </form>
 {% endblock %}
