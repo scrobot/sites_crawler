@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+
+  sites_crawler_db:
+    image: postgres
+    container_name: sites_crawler_database
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=sites_crawler
+      - POSTGRES_USER=sites_crawler_user
+      - POSTGRES_PASSWORD=3wHSAdTzHu2Jpb56
+    networks:
+      - back-tier
+
+networks:
+  back-tier:
+    driver: bridge
+
+volumes:
+  db_data: {}
