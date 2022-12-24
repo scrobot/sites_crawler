@@ -1,16 +1,15 @@
 @media (max-width: 520px) {
-    input[type="url"].form-control {
+    .input-form > input[type="text"] {
         min-width: 250px;
     }
 }
 
-@media (min-width: 420px) {
-    input[type="url"].form-control {
+@media (min-width: 520px) {
+    .input-form > input[type="text"] {
         min-width: 400px;
         width: 75% !important;
     }
 }
-
 
 .input-form {
     display: flex;
@@ -18,4 +17,11 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    position: relative;
+}
+
+.input-form .errorlist {
+    color: red;
+    position: absolute;
+    bottom: -50px;
 }

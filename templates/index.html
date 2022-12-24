@@ -6,8 +6,9 @@
 {% endblock %}
 
 {% block content %}
-    <form class="input-form">
-        <input type="url" class="form-control" placeholder="Insert the url" aria-label="URL">
+    <form action="/" method="post" class="input-form">
+        {% csrf_token %}
+        {{ form }}
         <input class="button-primary" type="submit" value="GO">
     </form>
 {% endblock %}
