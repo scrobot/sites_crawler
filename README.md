@@ -16,7 +16,7 @@ It is a simple tool that allows you to extract data from websites and save it to
 4. Run migrations
 5. Run the server
 6. Create superuser
-7. Call `python manage.py runcrons` to active the cron job
+7. Call `python manage.py runcrons` to activate the cron job
 8. Go to http://localhost:8000 and input the URL you want to scrape  
 9. Go to http://localhost:8000/job/{id} to see the state of the job
 10. Go to http://localhost:8000/admin and monitor the progress
