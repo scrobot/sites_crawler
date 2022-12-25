@@ -9,4 +9,4 @@ class CrawlJobAdmin(admin.ModelAdmin):
 
 @admin.register(WebsiteData)
 class CrawlJobAdmin(admin.ModelAdmin):
-    list_display = ['website', 'created_at']
+    list_display = ['url', 'created_at']

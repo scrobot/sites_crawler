@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block extends_stylesheets %}
+    {% load static %}
+    <link href="{% static 'css/job.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+    {% if job %}
+        <h2>Scrapping job #{{ job.id }}</h2>
+        <div class="job-info">
+            <ul>
+                <li><a href="{{ job.url }}" target="_blank">{{ job.url }}</a></li>
+                <li>Status {{ job.status }}</li>
+                <li>Created at {{ job.created_at }}</li>
+            </ul>
+        </div>
+
+        {% if sitemap %}
+            <h3>Sitemap</h3>
+            {% for key,value in sitemap.items %}
+                {% if value %}
+                <div class="sitemap-items">
+                    <h4>{{ key }}</h4>
+                    <ul>
+                        {% for url in value %}
+                            <li><a href="{{ url }}" target="_blank">{{ url }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% else %}
+        <p class="text-center">Job not found</p>
+    {% endif %}
+{% endblock %}

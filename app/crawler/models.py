@@ -20,10 +20,8 @@ class CrawlJob(models.Model):
     session = models.CharField(null=True, blank=True, max_length=100)
 
 
+# TODO: Create a relation many-to-many between CrawlJob and WebsiteData if needed
 class WebsiteData(models.Model):
-    website = models.CharField(max_length=255)
+    url = models.CharField(max_length=255)
     data = models.JSONField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.website
