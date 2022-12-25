@@ -12,13 +12,14 @@ It is a simple tool that allows you to extract data from websites and save it to
 
 1. Clone the repository
 2. Install requirements
-3. Run migrations
-4. Run the server
-5. Create superuser
-6. Call `python manage.py runcrons` to active the cron job
-7. Go to http://localhost:8000 and input the URL you want to scrape  
-8. Go to http://localhost:8000/job/{id} to see the state of the job
-9. Go to http://localhost:8000/admin and monitor the progress
+3. copy `app/.env_example` to `app/.env` and fill it with your data
+4. Run migrations
+5. Run the server
+6. Create superuser
+7. Call `python manage.py runcrons` to active the cron job
+8. Go to http://localhost:8000 and input the URL you want to scrape  
+9. Go to http://localhost:8000/job/{id} to see the state of the job
+10. Go to http://localhost:8000/admin and monitor the progress
 
 ## How it works
 
