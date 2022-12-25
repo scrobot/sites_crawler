@@ -1,4 +1,4 @@
-"""sites_crawler URL Configuration
+"""app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 
-from sites_crawler import settings, views
+from app import settings
+from app.crawler import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),

@@ -11,4 +11,8 @@
         {{ form }}
         <input class="button-primary" type="submit" value="GO">
     </form>
+
+    {% if job %}
+        <p class="text-center">Job with id: {{ job.id }} created in status {{ job.status }}. <a>Check the result here</a></p>
+    {% endif %}
 {% endblock %}

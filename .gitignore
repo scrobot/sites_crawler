@@ -121,7 +121,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-sites_crawler/.env
+app/.env
 .venv
 env/
 venv/

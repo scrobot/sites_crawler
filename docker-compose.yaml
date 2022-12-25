@@ -10,7 +10,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=sites_crawler
+      - POSTGRES_DB=app
       - POSTGRES_USER=sites_crawler_user
       - POSTGRES_PASSWORD=3wHSAdTzHu2Jpb56
     networks:
