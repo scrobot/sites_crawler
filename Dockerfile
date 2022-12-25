@@ -1,4 +1,4 @@
-FROM python:3.8-buster
+FROM python:3.10-alpine
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -10,10 +10,10 @@ RUN apt-get update \
     && apt-get autoremove --yes \
     && rm -rf /var/lib/{apt,dpkg}
 
-RUN groupadd -g 1001 -o palavadashboard \
-    && useradd -m -u 1000 -g 1001 -o -s /bin/bash palavadashboard \
-    && adduser palavadashboard www-data \
-    && adduser www-data palavadashboard
+RUN groupadd -g 1001 -o sites_crawler \
+    && useradd -m -u 1000 -g 1001 -o -s /bin/bash sites_crawler \
+    && adduser sites_crawler www-data \
+    && adduser www-data sites_crawler
 
 COPY etc/nginx.conf /etc/nginx/sites-available/default
 RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/nginx/error.log
@@ -21,11 +21,11 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && ln -sf /dev/stderr /var/log/
 # copy source and install dependencies
 RUN mkdir -p /opt/app \
     && mkdir -p /opt/app/pip_cache \
-    && mkdir -p /opt/app/palavadashboard
+    && mkdir -p /opt/app/sites_crawler
 
 COPY etc/gunicorn.conf.py requirements.txt start-server.sh /opt/app/
 COPY manage.py /opt/app/manage.py
-COPY palavadashboard /opt/app/palavadashboard/
+COPY sites_crawler /opt/app/sites_crawler/
 COPY public/media/ /opt/app/public/media/
 
 WORKDIR /opt/app

@@ -81,6 +81,7 @@ class WebsiteScrapper:
         self.url = url
 
     # TODO: make scrapper asynchronous for better performance
+    # TODO: refactor this method to separate methods for better readability
     def get_all_website_links(self) -> SitemapDto:
         # a queue of urls to be crawled
         urls = deque([self.url])
