@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from app.crawler.forms import GrabForm
-from app.crawler.services import CrawlerService
+from app.crawler.services import CrawlerTaskService
 
 
 def home(request):
@@ -14,7 +14,7 @@ def home(request):
             # check whether it's valid:
             if form.is_valid():
                 # process the data in form.cleaned_data as required
-                context['job'] = CrawlerService.create_job(form.cleaned_data['site_url']).__dict__
+                context['job'] = CrawlerTaskService.create_job(form.cleaned_data['site_url']).__dict__
         case "GET":
             form = GrabForm()
 
